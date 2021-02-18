@@ -1,41 +1,18 @@
+import javax.swing.*;
 import java.lang.reflect.Array;
 import java.util.*;
 
 public class TestExercises {
     public static void main(String[] args) {
 
-        String[] words = {"name","test","number","sorry"};
-        List<String> list1 = new ArrayList<String>();
+        Scanner scanner = new Scanner(System.in);
 
-        for (String word : words) {
-            list1.add(word);
-        }
+        String userStrOutput = JOptionPane.showInputDialog("Please enter the number of cookies");
+        double userNumberOfCookies = Double.parseDouble(userStrOutput);
+        double numberOfServings = (userNumberOfCookies / 40) * 10;
+        double numberOfColories = (numberOfServings  / 1) * 300;
 
-        String[] modeListRemoveDup = {"name", " test"};
-        List<String> list2 = new ArrayList<String>();
-
-        for (String modeList : modeListRemoveDup) {
-            list2.add(modeList);
-        }
-
-        editList(list1,list2);
-
-        for (int i = 0; i < list1.size(); i++) {
-            System.out.printf("%s ", list1.get(i));
-            
-        }
-
-
-    }
-
-    public static void editList(Collection<String> list1, Collection<String> list2) {
-        Iterator<String> iter1 = list1.iterator();
-
-        while (iter1.hasNext()) {
-
-            if (list2.contains(iter1.next())) {
-                iter1.remove();
-            }
-        }
+        JOptionPane.showMessageDialog(null, userNumberOfCookies + " cookies is equal to " +
+        numberOfColories + " (" + numberOfServings + ") ");
     }
 }
