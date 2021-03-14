@@ -3,11 +3,27 @@ import java.util.*;
 public class TestExercises {
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int[] arr = {0,12, 1,12, -1, 19};
+        System.out.println("Enter some text: ");
+        String text = scanner.nextLine();
 
 
+    }
+
+    public static String middleChar(String str) {
+        int position;
+        int length;
+
+        if (str.length() % 2 == 0) {
+            position = str.length() / 2 - 1;
+            length = 2;
+        } else {
+            position = str.length() / 2;
+            length = 1;
+        }
+
+        return str.substring(position, position + length);
     }
 
 }
