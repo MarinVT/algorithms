@@ -1,26 +1,42 @@
 import java.util.*;
 
+class RotateArray{
+    void leftRotate(int arr[], int d, int n) {
+        for (int i = 0; i < d; i++) {
+            leftRotateByOne(arr, n);
+        }
+    }
+
+    void leftRotateByOne(int arr[], int n) {
+        int temp;
+        temp = arr[0];
+        for (int i = 0; i < n - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[n - 1] = temp;
+    }
+
+    void printArray(int arr[], int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i] + " ");
+        }
+    }
+}
+
 public class TestExercises {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Input the investment amount: ");
-        double investment = scanner.nextDouble();
-        System.out.print("Input the rate of interest: ");
-        double rate = scanner.nextDouble();
-        System.out.print("Input number of years: ");
-        int year = scanner.nextInt();
+        int[] arr1 = {6,5,4,3,2,1,0};
 
-        rate *= 0.01;
-        System.out.println("Years FutureValue");
-        for (int i = 1; i <= year; i++) {
-            int formatter = 19;
-            if (i >= 10) formatter = 18;
-            System.out.printf(i + "%" + formatter + ".2f\n", futureInvestmentsValue(investment, rate/12, i));
-        }
+        RotateArray rotateArray = new RotateArray();
 
+        rotateArray.leftRotate(arr1, 2, 6);
+        rotateArray.printArray(arr1, 7);
 
     }
-    public static double futureInvestmentsValue(double investments, double mounthlyInterestRate, int years) {
-        return investments * Math.pow(1 + mounthlyInterestRate, years * 12);
-    }
+
+
+
+
 }
