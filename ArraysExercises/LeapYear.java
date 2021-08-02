@@ -8,10 +8,10 @@ public class LeapYear {
         System.out.println("Input year: ");
         int year = Integer.parseInt(scanner.nextLine());
 
-        System.out.println(isLearYear(2017));
+        System.out.println(isLeapYear(2017));
     }
 
-    public static boolean isLearYear(int y) {
+    public static boolean isLeapYear(int y) {
         boolean a = (y % 4) == 0;
         boolean b = (y % 100) != 0;
         boolean c = ((y % 100 == 0) && (y % 400 == 0));

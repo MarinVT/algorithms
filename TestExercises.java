@@ -1,5 +1,8 @@
-import java.util.*;
 
+
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class TestExercises {
 
@@ -7,8 +10,11 @@ public class TestExercises {
 
     public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
-    int a = 5;
-    int b = 2;
-        System.out.println(!(a > b) ? "a > b" : "a<=b");
+
+        Stream<Integer> stream = Stream.of(1,2,3);
+//        System.out.println(stream.reduce(0, (s, n) -> s+n));
+
+        stream = Stream.of(1,2,3);
+        System.out.println(stream.mapToInt(x -> x).sum());
     }
 }
