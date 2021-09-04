@@ -1,7 +1,6 @@
 package PracticeLessons.stringOperations;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 public class TwoStringsAnagrams_2 {
 

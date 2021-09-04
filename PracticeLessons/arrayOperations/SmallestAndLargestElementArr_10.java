@@ -1,6 +1,7 @@
 package PracticeLessons.arrayOperations;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class SmallestAndLargestElementArr_10 {
 
@@ -8,7 +9,7 @@ public class SmallestAndLargestElementArr_10 {
         int largest = myArr[0];
         int smallest = myArr[0];
 
-        for (int i = 1; i < myArr.length; i++) {
+        for (int i = 0; i < myArr.length; i++) {
             if (myArr[i] > largest) {
                 largest = myArr[i];
             } else if (myArr[i] < smallest) {
@@ -17,7 +18,7 @@ public class SmallestAndLargestElementArr_10 {
             }
         }
         System.out.println("The largest is: " + largest);
-        System.out.println("The smallest is:     " + smallest);
+        System.out.println("The smallest is: " + smallest);
    }
 
     // Approach 2
@@ -37,10 +38,28 @@ public class SmallestAndLargestElementArr_10 {
         System.out.println("Array's smallest number is: " + smallest);
     }
 
+    private static void findLargestAndSmallestNumArr(int[] arrNumbers) {
+        int largest = Integer.MIN_VALUE;
+        int smallest = Integer.MAX_VALUE;
+
+        for (int number : arrNumbers) {
+            if (number > largest) {
+                largest = number;
+            } else if (number < smallest) {
+                smallest = number;
+            }
+        }
+
+        System.out.println("Origin array is: " + Arrays.toString(arrNumbers));
+        System.out.println("The smallest number from my array is: " + smallest);
+        System.out.println("The largest number from my array is: " + largest);
+    }
+
+
     public static void main(String[] args) {
         int[] myArr = {1,2,3,4,5};
 //        largestOrSmallest(myArr);
-        largestSmallest2(myArr);
-
+//        largestSmallest2(myArr);
+    findLargestAndSmallestNumArr(myArr);
     }
 }
