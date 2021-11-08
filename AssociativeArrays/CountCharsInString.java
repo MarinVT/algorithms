@@ -9,12 +9,18 @@ public class CountCharsInString {
 
         String text = scanner.nextLine();
 
+        countCharsStr(text);
+
+
+    }
+
+    static void countCharsStr(String word) {
         //Keep the sequential order of inserting using link hash map
         LinkedHashMap<Character, Integer> charByOccurances = new LinkedHashMap<>();
 
 
-        for (int i = 0; i < text.length(); i++) {
-            char symbol1 = text.charAt(i);
+        for (int i = 0; i < word.length(); i++) {
+            char symbol1 = word.charAt(i);
 
             if (symbol1 != ' ') {
                 if (!charByOccurances.containsKey(symbol1)) {

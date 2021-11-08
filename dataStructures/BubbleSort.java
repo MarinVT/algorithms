@@ -1,4 +1,4 @@
-package advanceLessonsAlgorithm;
+package dataStructures;
 
 public class BubbleSort {
     public static void main(String[] args) {
