@@ -1,26 +1,32 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
-public class TestExercises {
-
+public class TestExercises<e> {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        int[] numbers = new int[]{20, 30, 25, 35, -16, 60, -100};
-        String[] arrStrings = {"Q", "W", "E", "C", "B", "A"};
-
-        String[] my_array = {"bcd", "abd", "jude", "bcd", "oiu", "gzw", "oiu"};
-
-        String word = "mar13in";
-        String anagram = "marin1a";
-
-        
+        reverseNumber(123);
 
     }
 
+    static void reverseNumber(int num) {
+        int reverseNum = 0;
+        int rightDigit;
+        if (num == 0) {
+            return ;
+        }
 
+        while (num > 0) {
+            rightDigit = num % 10;
+            reverseNum = reverseNum * 10 + rightDigit;
+            num = num / 10;
+        }
+
+        System.out.println(reverseNum);
+    }
 
 
 }
+
+
+
+
