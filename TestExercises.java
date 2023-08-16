@@ -1,28 +1,47 @@
+import java.lang.reflect.Array;
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class TestExercises<e> {
+public class TestExercises {
+
 
     public static void main(String[] args) {
 
-        reverseNumber(123);
 
+    Integer[] intArray = new Integer[]{1,2,3,4};
+    String [] stringsArray = new String[] {"VW", "tt", "bmw", "volga"};
+
+    List<Integer> integerList = new ArrayList<>(Arrays.asList(intArray));
+    List<String> stringList = new ArrayList<>(Arrays.asList(stringsArray));
+//
+//        System.out.println(integerList.contains(44));
+//        System.out.println(stringList.contains("VW4"));
+        sumDigitsNumber(123);
     }
 
-    static void reverseNumber(int num) {
-        int reverseNum = 0;
-        int rightDigit;
-        if (num == 0) {
-            return ;
+    public static <T> boolean arrContainsElement(final T[] arr, final T v) {
+
+        for (final T e : arr) {
+            if (e == v || v != null && v.equals(e)) {
+                return true;
+            }
         }
 
-        while (num > 0) {
-            rightDigit = num % 10;
-            reverseNum = reverseNum * 10 + rightDigit;
+        return false;
+    }
+
+    static void sumDigitsNumber(int num) {
+
+        int sum = 0;
+
+        while (num != 0) {
+            sum += num % 10;
             num = num / 10;
         }
 
-        System.out.println(reverseNum);
+        System.out.println(sum);
     }
+
 
 
 }

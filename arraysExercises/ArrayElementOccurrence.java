@@ -4,15 +4,12 @@ import java.util.Scanner;
 
 public class ArrayElementOccurrence {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] numbers = new int[5];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = scanner.nextInt();
-        }
-        System.out.println("Enter searching number: ");
-        int searchElement = scanner.nextInt();
 
-        System.out.println(getNumberOccurrence(numbers, searchElement));
+        Character[] vowels = { 'a'};
+
+        System.out.println(arrayStringContainsItem(vowels, 'a'));
+
+
     }
 
     public static int getNumberOccurrence(int[] numbers, int searchElement) {
@@ -26,4 +23,31 @@ public class ArrayElementOccurrence {
         }
         return occurrenceNum;
     }
+
+    public static boolean arrayStringContainsItem(Character[] arrChars, char ch) {
+
+        if (arrChars.length == 0) {
+            return false;
+        }
+
+        for (Character chars2 : arrChars) {
+            if (chars2.equals(ch)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    protected static boolean ok(char[] arrayChars, char searchingForChar) {
+        for (int i = arrayChars.length - 1; i >= 0; i--) {
+            if (arrayChars[i] == searchingForChar) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }
