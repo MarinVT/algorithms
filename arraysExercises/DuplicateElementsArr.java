@@ -1,8 +1,6 @@
 package arraysExercises;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class DuplicateElementsArr {
@@ -45,6 +43,17 @@ public class DuplicateElementsArr {
         System.out.println(duplicateElements);
     }
 
+    static void printDuplicateNumbsArray(Integer[] arr) {
+        List<Integer> itemsList = Arrays.asList(arr);
+
+        Set<Integer> newItemsSet = new HashSet<>();
+        System.out.println("Print list of duplicate elements: ");
+
+        itemsList.stream()
+                .filter(nums -> !newItemsSet.add(nums))
+                .forEach(System.out::println);
+    }
+
 
     public static void main(String[] args) {
         int[] arr = new int[]{1,2,3,4,4,5,6,7,7,8};
@@ -57,6 +66,7 @@ public class DuplicateElementsArr {
 //            }
 //        }
 
-    removeDuplicatesArr2ndEdit(strArr);
+        Integer[] arr1 = {1,2,3,4,4,5,6,6,7};
+         printDuplicateNumbsArray(arr1);
     }
 }
